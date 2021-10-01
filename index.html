@@ -1,1 +1,243 @@
-test 
+<!-- TODOS -->
+<!-- -Get complete/updated info on projects -->
+<!-- -Convert all images to WebP format -->
+<!-- -Accessibility check -->
+<!-- -Switch license to CCL from GPL -->
+<!-- -Setup Google Analytics -->
+<!-- -Language translations -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Code for San José - Home</title>
+  <!-- meta -->
+  <meta charset="utf-8" />
+  <meta name="description"
+    content="Code for San José is a Code for America brigade of volunteers dedicated to making San José and South Bay a better place through civic technology.">
+  <meta name="author" content="Code for San José">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <!-- mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- styles -->
+  <link rel="stylesheet" href="./assets/css/global.min.css">
+  <link rel="stylesheet" href="./assets/css/header.min.css">
+  <link rel="stylesheet" href="./assets/css/footer.min.css">
+  <link rel="stylesheet" href="./assets/css/index.min.css">
+  <link rel="stylesheet" href="./assets/css/projects.min.css">
+  <script src="https://kit.fontawesome.com/a5c8bf6536.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <script src="./assets/js/app.js" async></script>
+  <script src="./assets/js/project-info-landing.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js">
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-26B6FB8T8P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-26B6FB8T8P');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html">
+        <img src="./assets/img/logonav.png" id="navlogo" alt="Code for San José logo">
+      </a>
+      <div id="menu-btn">
+        <i onclick="menu_toggle()" id="fa-btn" class="fas fa-2x fa-bars"></i>
+      </div>
+      <div id="navlinks">
+        <div id="links">
+          <a href="./index.html">Home</a>
+          <a href="./volunteer.html">Volunteer</a>
+          <a href="./about.html">About Us</a>
+          <a href="./projects.html">Projects</a>
+          <a href="https://www.meetup.com/Code-for-San-Jose/" target="_blank" rel="noopener noref">Events</a>
+          <a href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20San%20Jose&utm_source=CodeforSanJose%20site"
+            target="_blank" rel="noopener noref">Donate</a>
+          <a href="./faq.html">FAQ</a>
+        </div>
+        <div id="sociallinks">
+          <a class="tooltip" href="https://codeforsanjose.slack.com/" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/Slack_Mark.svg" alt="Slack logo" class="socialnav" />
+            <span class="tooltiptext">Slack</span>
+          </a>
+          <a class="tooltip" href="https://www.meetup.com/Code-for-San-Jose/" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/meetup-logo-m-swarm.png" alt="Meetup logo" class="socialnav" />
+            <span class="tooltiptext">Meetup</span>
+          </a>
+          <a class="tooltip" href="https://www.facebook.com/codeforsanjose/" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/f_logo_RGB-Blue_512.png" alt="Facebook logo" class="socialnav" />
+            <span class="tooltiptext">Facebook</span>
+          </a>
+          <a class="tooltip" href="https://twitter.com/codeforsanjose" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/Twitter_Social_Icon_Circle_Color.svg" alt="Twitter logo"
+              class="socialnav" />
+            <span class="tooltiptext">Twitter</span>
+          </a>
+          <a class="tooltip" href="https://github.com/codeforsanjose/" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/GitHub-Mark-Light-120px-plus.png" alt="Github logo" class="socialnav" />
+            <span class="tooltiptext">Github</span>
+          </a>
+          <a class="tooltip" href="https://medium.com/code-for-san-jose" target="_blank" rel="noopener noref">
+            <img src="./assets/img/social_logos/Monogram.svg" alt="Medium logo" class="socialnav" />
+            <span class="tooltiptext">Medium</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="home-hero">
+        <div id="home-hero-content">
+          <h1>Help Build Tech for a Better San José</h1>
+          <p>Uniting volunteer coders, designers, researchers, community members, & more in solving local issues</p>
+          <a id="home-hero-btn" href="./volunteer.html">Get Involved</a>
+        </div>
+      </div>
+
+      <div class="text-content" id="home-about">
+        <h3>Who we are...</h3>
+        <p>
+          <strong>We are a Code for America brigade</strong> - a volunteer civic innovation organization welcoming
+          everyone interested in solving community problems in San José, California through technology, UX research, UI
+          designs, and community partnerships.
+        </p>
+        <h3>Our mission...</h3>
+        <p>Code for San José is a Code for America Brigade, a diverse nonprofit volunteer group. Our mission is to make community services more transparent, accessible, and equitable by collaborating with local government and community-based organizations on civic projects to improve San José and the wider South Bay for everyone.</p>
+        <h3>Our Vision...</h3>
+        <p>Code for San José seeks to be a key partner with the City of San José, other local governments, and local nonprofits in employing technological advancements to better serve its citizens. We want to be top of mind for these partners when they need a technical solution for their issues. With strong organization and leadership, we are able to quickly bring together volunteer resources and iterate fast on proposed solutions.</p>
+        <h3>What we do...</h3>
+        <p>We hold bi-monthly "civic hack nights in which our members work on a range of civic tech projects to improve
+          our community.</p>
+        <p>Not a member? Come on in! We onboard new members at every meeting.</p>
+        <p>Anyone can join! Technical skills are not required to contribute. Project managers, subject matter experts,
+          communications specialists, writers, researchers, community organizers, creatives, designers, developers, and
+          data scientists are all welcome!</p>
+      </div>
+
+      <div id="cta">
+        <div class="cta-card">
+          <i class="fas fa-5x fa-hands-helping"></i>
+          <a href="./volunteer.html">Get Involved</a>
+          <p>Share your skills with your community!</p>
+        </div>
+        <div class="cta-card">
+          <i class="fas fa-5x fa-hand-holding-heart"></i>
+          <a href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20San%20Jose&utm_source=CodeforSanJose%20site"
+            target="_blank" rel="noref noopener">Donate</a>
+          <p>Help us keep the lights on and feed our volunteers!</p>
+        </div>
+        <div class="cta-card">
+          <i class="fas fa-5x fa-lightbulb"></i>
+          <a href="https://forms.gle/ui7hCCaXCKXTVvN89" target="_blank" rel="noref noopener">Submit Idea</a>
+          <p>Have an idea to help improve our community?</p>
+        </div>
+
+      </div>
+
+      <div id="our-work">
+        <div class="h2bar"></div>
+        <h2>Our Work</h2>
+        <div class="small-hero" id="our-work-img"></div>
+        <p class="sectn-subh">Look at what we're working on and get involved!</p>
+        <div id="modal-attach" class="projects">
+
+        </div>
+        <a href="./projects.html" id="see-more">+ See More</a>
+      </div>
+
+      <div id="sponsors">
+        <div class="h2bar"></div>
+        <h2>Thanks to our Sponsors</h2>
+        <p class="sectn-subh">Code for San José enjoys the generous support of:</p>
+        <div id="sponsorLogo">
+          <img src="./assets/img/sponsor_logos/cfa-logo-color.png" alt="Code for America Logo">
+          <img src="./assets/img/sponsor_logos/microsoft logo.png" alt="Microsoft Logo">
+          <img src="./assets/img/sponsor_logos/awesome foundation.png" alt="Awesome Foundation Logo">
+        </div>
+        <!-- <p class="text-content">We host our hack nights at ActionSpot, a local co-working studio and startup incubator.
+          Organizations interested in membership at ActionSpot can contact Olga Buchonina</p> -->
+      </div>
+      <div id="find-us">
+        <div class="h2bar"></div>
+        <h2>Find Us</h2>
+        <div class="text-content">
+          <p class="notify">In response to the Covid-19 pandemic, we are currently holding hack nights virtually. Please
+            see our
+            Meetup page or join our Slack channel for details and registration links.</p>
+          <p>Code for San José typically meets two Thursdays a month at 6:30pm.
+            <!-- at ActionSpot (453 W. San Carlos St).  -->
+            For our next event, see our Meetup page.</p>
+          <p>Anyone can join! Technical skills are not required to contribute. We onboard new members at
+            every meeting.</p>
+        </div>
+        <div id="mapid">
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="foot-links">
+        <div id="site-map">
+          <h5>Site Map</h5>
+          <a href="./volunteer.html">Volunteer</a>
+          <a href="./about.html">About Us</a>
+          <a href="./projects.html">Projects</a>
+          <a href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20San%20Jose&utm_source=CodeforSanJose%20site"
+            target="_blank" rel="noopener noref">Donate</a>
+          <a href="https://www.meetup.com/Code-for-San-Jose/" target="_blank" rel="noopener noref">Events</a>
+          <a href="./faq.html">FAQ</a>
+        </div>
+        <div id="social-footer">
+          <h5>Social Media</h5>
+          <a href="https://codeforsanjose.slack.com" target="_blank" rel="noopener noref">Slack</a>
+          <a href="https://www.meetup.com/Code-for-San-Jose/" target="_blank" rel="noopener noref">Meetup</a>
+          <a href="https://www.facebook.com/codeforsanjose/" target="_blank" rel="noopener noref">Facebook</a>
+          <a href="https://medium.com/code-for-san-jose" target="_blank" rel="noopener noref">Medium</a>
+          <a href="https://github.com/codeforsanjose/" target="_blank" rel="noopener noref">Github</a>
+          <a href="https://twitter.com/codeforsanjose" target="_blank" rel="noopener noref">Twitter</a>
+        </div>
+      </div>
+      <div id="legal">
+        <a href="./index.html">
+          <img src="./assets/img/logonav.png" alt="Code for San José Logo">
+        </a>
+        <p>Got feedback? <a href="mailto:codeforsanjose@gmail.com">Let us know!</a></p>
+        <p>&copy Code for San José 2014 - 2020</p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+<!-- MAPBOX SCRIPT -->
+<script>
+  var mymap = L.map("mapid").setView([37.32694, -121.89699], 17);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZGFuZWtvbHNlbiIsImEiOiJjazl4ZXl5OGwwam5kM2hta2tiZG1hMmRhIn0.TuyZ8-gvC9b9Wm_nOj25kw'
+  }).addTo(mymap);
+  var marker = L.marker([37.32694, -121.89699]).addTo(mymap);
+  marker.bindPopup("<span id='mapPopup'><b>ActionSpot:</b><br>453 W San Carlos St,<br>San José, CA 95110</span>")
+    .openPopup();
+</script>
+
+
+
+</html>
